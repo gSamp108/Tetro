@@ -31,5 +31,12 @@ namespace Tetro
             this.lastTimeInputUsed[key] = time;
             this.inputQueue.Enqueue(key);
         }
+
+        public Queue<Keys> GetQueue()
+        {
+            var currentQueue = new Queue<Keys>(this.inputQueue);
+            this.inputQueue.Clear();
+            return currentQueue;
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace Tetro
     public partial class formMain : Form
     {
         public KeyboardInputManager KeyboardInput = new KeyboardInputManager();
+        private EngineInterface engine;
 
         public formMain()
         {
@@ -23,7 +24,16 @@ namespace Tetro
 
         public void Tick(double time)
         {
+            var keyboardInput = this.KeyboardInput.GetQueue();
+            if (this.engine != null) this.engine.Tick(time, keyboardInput);
+            this.Invalidate();
+        }
 
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            var canvas = new Canvas(e.Graphics, this.ClientRectangle, this.Font);
+            if (this.engine != null) this.engine.Render(canvas);
         }
     }
 }

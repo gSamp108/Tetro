@@ -45,13 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgeOfTetro\Chunk.cs" />
+    <Compile Include="AgeOfTetro\Engine.cs" />
+    <Compile Include="AgeOfTetro\Position.cs" />
+    <Compile Include="AgeOfTetro\Tile.cs" />
+    <Compile Include="AgeOfTetro\World.cs" />
+    <Compile Include="Canvas.cs" />
+    <Compile Include="EngineInterface.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="formMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formMain.Designer.cs">
       <DependentUpon>formMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grid.cs" />
+    <Compile Include="TetroGame\Grid.cs" />
     <Compile Include="KeyboardInputManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,5 +88,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
